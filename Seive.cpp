@@ -3,7 +3,6 @@
 void seive(int n)
 {
     vector <bool> is_prime(n+1, true);
-   // int ct_prime=n+1;//# of primes,initially assuming all are primes,then after processing,number of those whose truth value is false will be deducted from n+1
     int n;
     is_prime[0] = is_prime[1] = false;
     for (int i = 2; i * i <= n; i++) 
@@ -15,4 +14,15 @@ void seive(int n)
               }
                      }
     }
+    /*this part is for counting the number of primes till n(from 0) */
+  //if this part is enabled change void to int as return type of seive()
+   /* 
+    int ct_primes=0;
+   for(int k=0;k<n;k++)
+    {
+        if(is_prime[k]==true)
+            ++ct_primes;
+    }
+    return ct_primes;
+    */
 }
