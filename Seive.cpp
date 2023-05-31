@@ -1,8 +1,8 @@
 
-
+ vector <bool> is_prime(n+1, true);
 void seive(int n)
 {
-    vector <bool> is_prime(n+1, true);
+   
     int n;
     is_prime[0] = is_prime[1] = false;
     for (int i = 2; i * i <= n; i++) 
@@ -26,3 +26,25 @@ void seive(int n)
     return ct_primes;
     */
 }
+
+
+
+//MORE OPTIMIZED
+vector<int> primes;
+vector<bool> isprime(1000, false);//so that all evens except for 2 are marked as NTO PRIME
+
+void seive(int n)
+{
+    isprime[2]=true;
+    for(int i=3; i*i <= n; i+=2)
+    {
+        if(isprime[i]==true)
+            {
+                for(int j=i*i; j<= n; j+=i)
+                    isprime[j]=false;
+            }
+    }
+}
+
+//done with bitset
+
