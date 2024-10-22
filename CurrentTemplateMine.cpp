@@ -136,43 +136,9 @@ void precompute()
 {
     
 }
-const int MOD = 1e9 + 7;
-
-// Custom comparator for sorting arrays
-bool compareArrays(const array<ll, 3>& a, const array<ll, 3>& b) {
-    if (a[0] != b[0]) return a[0] < b[0];
-    if (a[1] != b[1]) return a[1] < b[1];
-    return a[2] < b[2];
-}
-
-void solve(int tcNo) {
-    ll n;
-    cin>>n;
-    vector<array<ll, 2>> pairs(n);
-    set<ll> uniqye;
-    for (int i = 0; i < n; i++) {
-        ll x, y;
-        cin >> x >> y;
-        pairs[i] = {x, y};
-        uniqye.insert(x);
-        uniqye.insert(y);
-    }
-    map<ll, ll> valueToIndex;
-    ll idx = 1;
-    for (ll val : uniqye) {
-        valueToIndex[val] = idx++;
-    }
-    vector<array<ll, 3>> result(n);
-    for (int i = 0; i < n; i++) {
-        ll compX = valueToIndex[pairs[i][0]];
-        ll compY = valueToIndex[pairs[i][1]];
-        result[i] = {compX + compY, pairs[i][0], pairs[i][1]};
-    }
-    sort(all(result), compareArrays);
-    for (const auto& item : result) {
-        cout << item[1] << " " << item[2] << " ";
-    }
-    cout << "\n";
+void solve(int& tcNo)
+{
+    //comment out fast_io if I/O related problem occurs
 }
 int main() {
     fast_io;
